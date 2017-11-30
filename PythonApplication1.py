@@ -26,7 +26,7 @@ class StdOutListener(StreamListener):
         # Open/create a file to append data to
         #Use csv writer
         tweet = json.loads(data)  
-        conn = psycopg2.connect("host='localhost' dbname='postgres' user='postgres' password='perform.123'")
+        conn = psycopg2.connect("host='localhost' dbname='postgres' user='postgres' password='password'")
         print('saving...')
         cursor = conn.cursor()
         query =  "INSERT INTO tweets (tweet_data_json, tweet_data_jsonb, tweet_text, tweet_id, screen_name, created_at) VALUES (%s, %s,%s, %s,%s,%s);"
